@@ -92,42 +92,22 @@ console.log(createGalleryMarkup);
 
 
 
-// делегування 
+    // делегування 
 
 gallery.addEventListener("click", function (event) {
-  console.log(event);
-const target = event.target;
-const imageUrl = target.getAttribute("data-image");
-event.preventDefault();
-
-console.log(imageUrl);
-console.log(target);
- });
-
-// модальне вікно
-// const card = Event.target.closest(".gallery-item");
-// console.log(card);
-// const originalClicked = card.dataset.original;
-
-// const { preview, original, description } = images.find(
-//   (image) => image.original == originalClicked
-// );
   
-// Отримання всіх елементів галереї
-const galleryItems = document.querySelectorAll('.gallery-item');
+  event.preventDefault();
+  
+  const target = event.target;
 
-// Додавання обробника подій для кожного елементу галереї
-galleryItems.forEach((item) => {
-  console.log(item);
-  item.addEventListener('click', () => {
+  if (target.nodeName !== 'IMG') return;
 
-    // Створення модального вікна зображення
-    const modal = basicLightbox.create(
-      `<div class="modal"><img src="${item.original}" width="800" height="600">`
-    );
-    console.log(modal);
+  const imageUrl = target.dataset.source;
 
-    // Відкривання модального вікна
+    // модальне вікно
+  
+  const modal = basicLightbox.create(`<img src="${imageUrl}" alt="${target.alt}" width="1112" height="640">`);
+    
     modal.show();
   });
-});
+ 
