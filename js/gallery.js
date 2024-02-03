@@ -67,7 +67,7 @@ const images = [
 // Пошук галереї
 
 const gallery = document.querySelector("ul.gallery");
-console.log(gallery);
+
 
 // генерація елементів
 
@@ -88,15 +88,12 @@ function createGalleryMarkup(images) {
     )
     .join("");
 }
-console.log(createGalleryMarkup);
-
-
 
     // делегування 
 
 gallery.addEventListener("click", function (event) {
   
-  event.preventDefault();
+event.preventDefault();
   
   const target = event.target;
 
