@@ -25,7 +25,7 @@
  
 .gallery-image:hover {
     transform: scale(1.03);
-    cursor: url(/cursor.svg), auto;
+    /* cursor: url(/cursor.svg), auto; */
     fill: #4e75ff;
 
     
